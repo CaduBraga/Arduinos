@@ -1,2 +1,2 @@
-*.sql linguist-language=SQL
-*.sql linguist-detectable=true
+*.brd linguist-language=Eagle
+*.brd linguist-detectable=true
