@@ -1,0 +1,70 @@
+{
+  "version": 1,
+  "author": "Cadu Braga",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-breadboard-half", "id": "bb1", "top": -12.6, "left": 185.2, "attrs": {} },
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 0.6, "left": -154.2, "attrs": {} },
+    { "type": "wokwi-membrane-keypad", "id": "keypad1", "top": -472.4, "left": -52, "attrs": {} },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 100.8,
+      "left": 201.05,
+      "rotate": 90,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": 100.8,
+      "left": 210.65,
+      "rotate": 90,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r3",
+      "top": 100.8,
+      "left": 220.25,
+      "rotate": 90,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r4",
+      "top": 100.8,
+      "left": 229.85,
+      "rotate": 90,
+      "attrs": { "value": "220" }
+    }
+  ],
+  "connections": [
+    [ "uno:GND.3", "bb1:bn.1", "black", [ "v19.1", "h148" ] ],
+    [ "bb1:bn.2", "bb1:3b.j", "black", [ "v0" ] ],
+    [ "bb1:bn.3", "bb1:4b.j", "black", [ "v0" ] ],
+    [ "bb1:bn.4", "bb1:5b.j", "black", [ "v0" ] ],
+    [ "bb1:bn.5", "bb1:6b.j", "black", [ "v0" ] ],
+    [ "uno:6", "keypad1:R4", "green", [ "v-67.2", "h32.5", "v-38.4", "h0.2" ] ],
+    [ "uno:5", "keypad1:R3", "gray", [ "v-76.8", "h13.7" ] ],
+    [ "uno:4", "keypad1:R2", "white", [ "v-76.8", "h-5.7", "v-38.4", "h0.4" ] ],
+    [ "uno:3", "keypad1:R1", "gold", [ "v-57.6", "h-24.8" ] ],
+    [ "uno:8", "bb1:3t.a", "blue", [ "v-48", "h154", "v76.8" ] ],
+    [ "uno:9", "bb1:4t.b", "violet", [ "v-38.4", "h154.4", "v76.8" ] ],
+    [ "uno:10", "bb1:5t.c", "orange", [ "v-28.8", "h154.3", "v76.8" ] ],
+    [ "uno:11", "bb1:6t.d", "red", [ "v-19.2", "h154.2", "v76.8" ] ],
+    [ "r1:1", "bb1:3t.e", "", [ "$bb" ] ],
+    [ "r1:2", "bb1:3b.i", "", [ "$bb" ] ],
+    [ "r2:1", "bb1:4t.e", "", [ "$bb" ] ],
+    [ "r2:2", "bb1:4b.i", "", [ "$bb" ] ],
+    [ "r3:1", "bb1:5t.e", "", [ "$bb" ] ],
+    [ "r3:2", "bb1:5b.i", "", [ "$bb" ] ],
+    [ "r4:1", "bb1:6t.e", "", [ "$bb" ] ],
+    [ "r4:2", "bb1:6b.i", "", [ "$bb" ] ],
+    [ "bb1:3t.a", "keypad1:C1", "blue", [ "v-86.4", "h-144" ] ],
+    [ "keypad1:C2", "bb1:4t.a", "violet", [ "v76.8", "h144" ] ],
+    [ "bb1:5t.a", "keypad1:C3", "orange", [ "v-105.6", "h-144" ] ],
+    [ "keypad1:C4", "bb1:6t.a", "red", [ "v57.6", "h143.7" ] ]
+  ],
+  "dependencies": {}
+}
