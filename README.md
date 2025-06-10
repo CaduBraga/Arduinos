@@ -25,6 +25,3 @@ A Internet das Coisas (IoT) envolve a integração de dispositivos físicos ao m
 2. Siga as instruções presentes nos arquivos de cada atividade para realizar os experimentos.
 
 ---
-
-**Autor:** Cadu Braga  
-**Disciplina:** Internet das Coisas (IoT)
