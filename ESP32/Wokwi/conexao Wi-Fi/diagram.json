@@ -1,0 +1,26 @@
+{
+    "version": 1,
+    "author": "Carlos Eduardo Braga",
+    "editor": "wokwi",
+    "parts": [
+      { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": -19.2, "left": -52.76, "attrs": {} },
+      { "type": "wokwi-led", "id": "led_esp", "top": -42, "left": 80.6, "attrs": { "color": "limegreen" } },
+      { "type": "wokwi-led", "id": "led_wifi", "top": -42, "left": 128.6, "attrs": { "color": "red" } },
+      { "type": "wokwi-text", "id": "text_esp", "top": -57.6, "left": 76.8, "attrs": { "text": "ESP ON" } },
+      { "type": "wokwi-text", "id": "text_wifi", "top": -57.6, "left": 134.4, "attrs": { "text": "WiFi" } },
+      { "type": "wokwi-potentiometer", "id": "pot1", "top": 87.4, "left": -193.3, "rotate": 270, "attrs": {} }
+    ],
+    "connections": [
+      [ "esp:TX", "$serialMonitor:RX", "", [] ],
+      [ "esp:RX", "$serialMonitor:TX", "", [] ],
+      [ "led_esp:C", "esp:GND.2", "black", [ "v0" ] ],
+      [ "led_wifi:C", "esp:GND.2", "black", [ "v0" ] ],
+      [ "led_esp:A", "esp:2", "red", [ "v0" ] ],
+      [ "led_wifi:A", "esp:15", "red", [ "v0" ] ],
+      [ "pot1:GND", "esp:GND.1", "black", [ "h0" ] ],
+      [ "pot1:VCC", "esp:5V", "red", [ "h0" ] ],
+      [ "esp:34", "pot1:SIG", "green", [ "h-57.45", "v76.4" ] ]
+    ],
+    "dependencies": {}
+  }
+  
