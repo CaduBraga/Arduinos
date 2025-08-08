@@ -1,6 +1,6 @@
 # Guia de Contribuição
 
-Obrigado por considerar contribuir para este projeto educacional de Programação Front End!
+Obrigado por considerar contribuir para este projeto educacional de Internet das Coisas (IoT) e desenvolvimento com Arduino/ESP32!
 
 ## Como Contribuir
 
@@ -9,7 +9,7 @@ Obrigado por considerar contribuir para este projeto educacional de Programaçã
 1. Faça um fork deste repositório
 2. Clone o fork para sua máquina local:
    ```bash
-   git clone https://github.com/CaduBraga/programacao-front-end.git
+   git clone https://github.com/CaduBraga/Arduinos.git
    ```
 
 ### 2. Crie uma Branch
@@ -22,10 +22,11 @@ git checkout -b feature/nova-funcionalidade
 ### 3. Desenvolva
 
 - Mantenha o código limpo e bem documentado
-- Siga os padrões de nomenclatura HTML/CSS/JavaScript
+- Siga os padrões de nomenclatura Arduino/C++
 - Adicione comentários explicativos quando necessário
-- Teste seu código em diferentes navegadores
-- Mantenha a responsividade dos layouts
+- Teste seu código em hardware real quando possível
+- Mantenha a segurança eletrônica em mente
+- Documente circuitos adequadamente
 
 ### 4. Commit
 
@@ -45,70 +46,44 @@ git commit -m "Adiciona nova funcionalidade X"
 
 ## Padrões de Código
 
-### HTML
-- Use tags semânticas apropriadas
-- Mantenha a estrutura hierárquica clara
-- Use atributos alt em imagens
-- Mantenha a acessibilidade em mente
-
-### CSS
-- Use nomes de classes descritivos
-- Organize propriedades em ordem lógica
-- Use variáveis CSS para cores e valores reutilizáveis
-- Mantenha especificidade baixa
-- Use Flexbox e Grid para layouts
-
-### JavaScript
-- Use camelCase para variáveis e funções
-- Use PascalCase para classes
-- Use UPPER_CASE para constantes
-- Mantenha funções pequenas e focadas
+### Arduino/ESP32
+- Use nomes descritivos para variáveis e funções
+- Mantenha a estrutura setup() e loop() clara
+- Use comentários para explicar lógica complexa
+- Organize bibliotecas no topo do arquivo
+- Teste em diferentes condições
 
 ### Estrutura de Projetos
 ```
 projeto/
-├── index.html
-├── pages/
-│   └── outras-paginas.html
-├── assets/
-│   ├── images/
-│   ├── fonts/
-│   └── videos/
-├── styles/
-│   └── style.css
-└── README.md
+├── sketch.ino
+├── diagram.json          # Para projetos Wokwi
+├── libraries.txt         # Lista de bibliotecas
+├── README.md            # Documentação do projeto
+├── components/          # Lista de componentes
+└── images/             # Imagens do circuito
 ```
 
 ### Comentários
-```html
-<!-- Seção de navegação principal -->
-<nav class="main-nav">
-    <!-- Links de navegação -->
-</nav>
-```
+```cpp
+// Configuração dos pinos
+const int LED_PIN = 13;
+const int SENSOR_PIN = A0;
 
-```css
-/* Estilos para o cabeçalho */
-.header {
-    /* Propriedades de layout */
-    display: flex;
-    justify-content: space-between;
-    
-    /* Propriedades visuais */
-    background-color: var(--primary-color);
-    padding: 1rem;
+// Função para ler sensor
+int readSensor() {
+    int value = analogRead(SENSOR_PIN);
+    return map(value, 0, 1023, 0, 100);
 }
 ```
 
-```javascript
-/**
- * Função para validar formulário
- * @param {HTMLFormElement} form - Elemento do formulário
- * @returns {boolean} - Retorna true se válido
- */
-function validateForm(form) {
-    // Lógica de validação
-}
+### Bibliotecas
+```cpp
+// Inclusão de bibliotecas
+#include <Wire.h>
+#include <LiquidCrystal_I2C.h>
+#include <WiFi.h>
+#include <PubSubClient.h>
 ```
 
 ## Tipos de Contribuição
@@ -116,34 +91,61 @@ function validateForm(form) {
 ### 🐛 Correção de Bugs
 - Descreva o bug claramente
 - Inclua passos para reproduzir
-- Teste em diferentes navegadores
+- Teste em hardware real
 - Adicione screenshots se necessário
+- Verifique se não há problemas de segurança
 
 ### ✨ Novas Funcionalidades
 - Explique a funcionalidade proposta
-- Mantenha consistência com o design existente
-- Adicione documentação
-- Teste a responsividade
+- Mantenha consistência com projetos existentes
+- Adicione documentação completa
+- Teste a funcionalidade adequadamente
+- Considere implicações de segurança
 
 ### 📚 Melhorias na Documentação
 - Corrija erros de gramática
 - Adicione exemplos de uso
 - Melhore a clareza das instruções
-- Atualize screenshots se necessário
+- Atualize diagramas se necessário
+- Documente componentes utilizados
 
-### 🎨 Melhorias de Design
-- Refatore CSS existente
-- Melhore a responsividade
-- Adicione animações suaves
-- Mantenha a acessibilidade
+### 🔧 Melhorias de Circuitos
+- Refatore circuitos existentes
+- Melhore a eficiência energética
+- Adicione proteções adequadas
+- Mantenha a segurança
+- Documente mudanças
+
+### 📡 Projetos IoT
+- Implemente conectividade segura
+- Use protocolos adequados (MQTT, HTTP)
+- Adicione autenticação quando necessário
+- Teste em diferentes redes
+- Documente configurações
 
 ## Processo de Review
 
 1. **Análise de Código**: Seu código será revisado
-2. **Testes**: Verifique se funciona em diferentes navegadores
-3. **Responsividade**: Teste em diferentes tamanhos de tela
+2. **Testes**: Verifique se funciona em hardware real
+3. **Segurança**: Teste aspectos de segurança eletrônica
 4. **Documentação**: Atualize documentação se necessário
 5. **Merge**: Após aprovação, será mergeado
+
+## Diretrizes de Segurança
+
+### Eletrônica
+- Use componentes adequados para tensão/corrente
+- Teste circuitos antes de conectar ao microcontrolador
+- Use resistores de proteção quando necessário
+- Verifique polaridade de componentes
+- Trabalhe em ambiente seguro
+
+### IoT
+- Use protocolos seguros (MQTT com TLS, HTTPS)
+- Implemente autenticação adequada
+- Proteja dados sensíveis
+- Teste conectividade em diferentes redes
+- Documente configurações de rede
 
 ## Código de Conduta
 
@@ -151,7 +153,31 @@ function validateForm(form) {
 - Ajude outros desenvolvedores
 - Mantenha o foco educacional do projeto
 - Reporte problemas de forma profissional
-- Respeite as diretrizes de acessibilidade
+- Respeite as diretrizes de segurança
+
+## Estrutura de Nomenclatura
+
+### Arquivos
+- `sketch.ino` - Código principal Arduino
+- `diagram.json` - Diagrama Wokwi
+- `libraries.txt` - Lista de bibliotecas
+- `README.md` - Documentação do projeto
+
+### Variáveis e Funções
+```cpp
+// Constantes em MAIÚSCULAS
+const int LED_PIN = 13;
+const int SENSOR_PIN = A0;
+
+// Funções em camelCase
+void setupWiFi() {
+    // Configuração Wi-Fi
+}
+
+// Variáveis descritivas
+int sensorValue = 0;
+bool isConnected = false;
+```
 
 ## Contato
 
@@ -161,4 +187,4 @@ Para dúvidas ou sugestões:
 
 ---
 
-**Obrigado por contribuir para o aprendizado mútuo!** 🎓
+**Obrigado por contribuir para o aprendizado mútuo de IoT!** 🔌⚡

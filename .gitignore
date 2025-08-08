@@ -1,16 +1,95 @@
-# Ignorar arquivos de sistema
+# Arquivos de sistema
 .DS_Store
 Thumbs.db
+desktop.ini
 
-# Ignorar logs
+# Logs
 *.log
+*.log.*
 
-# Ignorar arquivos temporários
+# Arquivos temporários
 *.tmp
 *.swp
+*.swo
+*~
 
-# Ignorar pastas de backup do VSCode
+# Pastas de IDE
 .vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
 
-# Ignorar arquivos de cache
-.cache/ 
+# Cache e arquivos de build
+.cache/
+build/
+dist/
+*.o
+*.elf
+*.bin
+*.hex
+
+# Arduino específico
+*.hex
+*.eep
+*.elf
+*.bin
+*.map
+*.sym
+*.lss
+*.dmp
+*.dis
+*.d
+
+# ESP32 específico
+*.partitions.bin
+*.bootloader.bin
+*.app.bin
+*.flash_args
+*.flash_cmd
+*.flash_cmd.new
+
+# Bibliotecas Arduino
+libraries/
+hardware/
+
+# Arquivos de configuração sensíveis
+config.h
+secrets.h
+credentials.h
+wifi_config.h
+
+# Arquivos de dados
+*.csv
+*.dat
+*.txt
+!libraries.txt
+!wokwi-project.txt
+
+# Imagens e mídia (opcional - descomente se não quiser versionar)
+# *.jpg
+# *.jpeg
+# *.png
+# *.gif
+# *.mp4
+# *.avi
+
+# Arquivos de backup
+*.bak
+*.backup
+*_backup.*
+
+# Arquivos de teste
+test_*
+*_test.*
+
+# Arquivos de debug
+debug_*
+*_debug.*
+
+# Arquivos de simulação
+simulation_*
+*_sim.*
+
+# Arquivos de documentação temporários
+*.tmp.md
+*.draft.md 

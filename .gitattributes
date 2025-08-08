@@ -1,2 +1,120 @@
-*.brd linguist-language=Eagle
-*.brd linguist-detectable=true
+# Linguagens de programação principais
+*.ino linguist-language=C++
+*.cpp linguist-language=C++
+*.c linguist-language=C
+*.h linguist-language=C++
+*.hpp linguist-language=C++
+
+# Arquivos de configuração e dados
+*.json linguist-language=JSON
+*.xml linguist-language=XML
+*.yaml linguist-language=YAML
+*.yml linguist-language=YAML
+*.toml linguist-language=TOML
+*.ini linguist-language=INI
+
+# Arquivos de documentação
+*.md linguist-language=Markdown
+*.txt linguist-documentation
+*.rst linguist-language=reStructuredText
+
+# Arquivos de projeto e configuração
+*.brd linguist-vendored
+*.sch linguist-vendored
+*.pcb linguist-vendored
+*.kicad_pcb linguist-vendored
+*.kicad_sch linguist-vendored
+
+# Arquivos de simulação e plataformas
+*.wokwi linguist-vendored
+*.tinkercad linguist-vendored
+*.fritzing linguist-vendored
+
+# Arquivos de biblioteca e dependências
+libraries.txt linguist-documentation
+*.lib linguist-vendored
+*.a linguist-vendored
+*.so linguist-vendored
+*.dll linguist-vendored
+
+# Arquivos de build e compilação
+*.hex linguist-generated
+*.bin linguist-generated
+*.elf linguist-generated
+*.map linguist-generated
+*.sym linguist-generated
+*.lss linguist-generated
+*.dmp linguist-generated
+*.dis linguist-generated
+
+# Arquivos de configuração de IDE
+.vscode/* linguist-vendored
+.idea/* linguist-vendored
+*.sublime-project linguist-vendored
+*.sublime-workspace linguist-vendored
+
+# Arquivos de log e debug
+*.log linguist-generated
+*.out linguist-generated
+*.err linguist-generated
+
+# Arquivos de dados e sensores
+*.csv linguist-data
+*.dat linguist-data
+*.raw linguist-data
+
+# Arquivos de imagem e mídia
+*.jpg linguist-vendored
+*.jpeg linguist-vendored
+*.png linguist-vendored
+*.gif linguist-vendored
+*.svg linguist-vendored
+*.bmp linguist-vendored
+*.ico linguist-vendored
+
+# Arquivos de vídeo e áudio
+*.mp4 linguist-vendored
+*.avi linguist-vendored
+*.mov linguist-vendored
+*.wav linguist-vendored
+*.mp3 linguist-vendored
+
+# Arquivos de documentação técnica
+*.pdf linguist-vendored
+*.doc linguist-vendored
+*.docx linguist-vendored
+*.xls linguist-vendored
+*.xlsx linguist-vendored
+
+# Arquivos de backup e temporários
+*.bak linguist-generated
+*.tmp linguist-generated
+*.swp linguist-generated
+*.swo linguist-generated
+*~ linguist-generated
+
+# Arquivos de configuração sensíveis
+config.h linguist-generated
+secrets.h linguist-generated
+credentials.h linguist-generated
+wifi_config.h linguist-generated
+
+# Arquivos específicos do projeto
+wokwi-project.txt linguist-documentation
+diagram.json linguist-language=JSON
+libraries.txt linguist-documentation
+
+# Configurações globais
+*.gitattributes linguist-vendored
+*.gitignore linguist-vendored
+.gitignore linguist-vendored
+.gitattributes linguist-vendored
+
+# Arquivos de licença e documentação legal
+LICENSE linguist-documentation
+LICENSE.txt linguist-documentation
+COPYING linguist-documentation
+README* linguist-documentation
+CHANGELOG* linguist-documentation
+CONTRIBUTING* linguist-documentation
+CODE_OF_CONDUCT* linguist-documentation
